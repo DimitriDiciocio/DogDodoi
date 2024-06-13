@@ -20,6 +20,18 @@ def sobrenos():
 def contato():
     return render_template('contato.html', contatos=contatos)
 
+@app.route('/servicos')
+def servicos():
+    return render_template('servicos.html', contatos=contatos)
+
+@app.route('/agenda', methods=['GET', 'POST'])
+def agenda():
+    return render_template('agenda.html', agenda=agendas, contatos=contatos)
+
+@app.route('/soro_e_dose', methods=['GET', 'POST'])
+def soro_e_dose():
+    return render_template('soro_e_dose.html', soro=soros, dose=doses, contatos=contatos)
+
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     if request.method == 'POST':
@@ -174,17 +186,6 @@ def calcular_soro():
         return render_template('soro_e_dose.html', soro=soros, contatos=contatos)
 
 
-@app.route('/servicos')
-def servicos():
-    return render_template('servicos.html', contatos=contatos)
-
-@app.route('/agenda', methods=['GET', 'POST'])
-def agenda():
-    return render_template('agenda.html', agenda=agendas, contatos=contatos)
-
-@app.route('/soro_e_dose', methods=['GET', 'POST'])
-def soro_e_dose():
-    return render_template('soro_e_dose.html', soro=soros, dose=doses, contatos=contatos)
 
 if __name__ == '__main__':
     app.run(debug=True)
