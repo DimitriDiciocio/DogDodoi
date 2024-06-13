@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="../static/css/agendas.css">
+</head>
+    <body>
+        <header class="cabecalho">
+            <div class="container">
+                <nav>
+                    <a href="/sobrenos"><button class="botaolegal">Sobre Nós</button></a>
+                </nav>
+                <nav>
+                    <a href="/servicos"><button class="botaolegal">Serviços</button></a>
+                </nav>
+                <a href="/"><img class="logo" src="../static/img/logo.png" alt=""></img></a>
+                <nav>
+                    <a href="/contato"><button class="botaolegal">Contato</button></a>
+                </nav>
+                <nav>
+                    <a href="{% if contatos %}{% for contato in contatos %}/editar_usuario/{{ loop.index0 }}{%endfor%}{% else %}/cadastro{% endif %}">
+                        <button class="botaolegal">
+                            {% if contatos %}
+                                {{ contatos[-1][1] }}
+                            {% else %}
+                                Cadastrar-se
+                            {% endif %}
+                        </button>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="barraverde"></div>
+        <main>
+            <div class="banner">
+                <div>
+                <h2 class="titulo2"><span class="vermelho">Agendamento</span> de <span class="verde">consultas</span></h2>
+                <p class="subtitulo">A Clínica Veterinária Dog Dodói é referência no atendimento a cães e gatos no Brasil</p>
+                <a href="/sobrenos"><button class="saibamais">SAIBA MAIS</button></a>
+                </div>
+            </div>
+            <div class="backverde margindown margintop center">
+                <div class="quadrobranco2">
+                    <div class="txtcenter margindown margintop">
+                        <p class="titulo2_ margindown2 verde">AGENDAMENTO CONCLUÍDO</p>
+                        <p class="margindown subtitulo2">Veja seu agendamento abaixo:</p>
+                    </div>
+                    <div class="container4">
+                    {% for agenda in agenda %}
+                        {% if agenda[0] % 2 != 0 %}
+                        <div class="quebra"></div>
+                        {% endif %}
+                        <div class="quadro-verde">
+                            <p class="center margindown2 letragrande">AGENDAMENTO</p>
+                            <ul class="center">
+                                <li class="letramedia">Nome do PET: {{ agenda[1] }} <br> Nome do Tutor: {{ agenda[2] }} <br> Data: {{ agenda[3] }} <br> Sintomas: {{ agenda[4] }} <!-- Exibe as informações do contato, incluindo o nome, número de telefone e email. Se for favorito, adiciona um marcador -->
+                                    <ul>
+                                        <li><a href="/editar_agendamento/{{ loop.index0 }}"><button class="botaolegal2 realmargin">Editar</button></a></li>
+                                        <li><a href="/apagar_agendamento/{{ loop.index0 }}"><button class="botaolegal2">Apagar</button></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <a href="/adicionar_agendamento" class="center"><button class="botaolegal">AGENDAR</button></a>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="rosa">
+                    <h3 class="titulo4">Inscreva seu e-mail</h3>
+                    <p class="paragrafo1">Cadastre seu email e receba todas as nossas novidades.</p>
+                    <form action="">
+                        <ul>
+                            <input class="input" type="email" placeholder="Digite seu e-mail:">
+                            <button class="inscrever-se" type="submit">Inscrever-se</button>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <img class="logo1" src="../static/img/logo.png" alt="">
+            <p>©2024 Dog Dodoi</p>
+            <p class="cantinho">@dogdodoioficial</p>
+        </footer>
+    </body>
+</html>

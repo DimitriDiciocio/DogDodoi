@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular soro e dose</title>
+    <link rel="stylesheet" href="../static/css/agendar.css">
+</head>
+    <body>
+        <header class="cabecalho">
+            <div class="container">
+                <nav>
+                    <a href="/sobrenos"><button class="botaolegal">Sobre Nós</button></a>
+                </nav>
+                <nav>
+                    <a href="/servicos"><button class="botaolegal">Serviços</button></a>
+                </nav>
+                <a href="/"><img class="logo" src="../static/img/logo.png" alt=""></img></a>
+                <nav>
+                    <a href="/contato"><button class="botaolegal">Contato</button></a>
+                </nav>
+                <nav>
+                    <a href="{% if contatos %}{% for contato in contatos %}/editar_usuario/{{ loop.index0 }}{%endfor%}{% else %}/cadastro{% endif %}">
+                        <button class="botaolegal">
+                            {% if contatos %}
+                                {{ contatos[-1][1] }}
+                            {% else %}
+                                Cadastrar-se
+                            {% endif %}
+                        </button>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="barraverde"></div>
+        <main>
+            <div class="banner">
+                <div>
+                <h2 class="titulo2">Calculadora de <span class="vermelho">soro </span> e <span class="verde">dose</span></h2>
+                <p class="subtitulo">Vamos calcular o soro e a dose do seu animalzinho! Esteja atento às informações</p>
+                <a href="/sobrenos"><button class="saibamais">SAIBA MAIS</button></a>
+                </div>
+            </div>
+            <div>
+                <div class="backverde margindown margintop center">
+                    <div class="quadrobranco2">
+                        <div class="txtcenter margindown margintop">
+                            <p class="titulo2_ margindown2 verde">Calcular a dose do animal</p>
+                            <p class="margindown subtitulo2">preencha as informações a seguir para calcular</p>
+                        </div>
+                        <div class="center">
+                            <form action="/calcular_dose" method="POST">
+                                <label for="nome">Nome do animal:</label><br>
+                                <input type="text" id="nome" name="nome" required class="input-oval"><br><br><br>
+                                <label for="peso">Peso:</label><br>
+                                <input type="number" id="peso" name="peso" required class="input-oval" step="0.01"><br><br><br>
+                                <label for="dose">Dose recomendada:</label><br>
+                                <input type="number" id="dose" name="dose" required class="input-oval"><br><br><br>
+                                <input type="submit" value="Calcular" class="botaolegal">
+                            </form>
+                        </div> <br><br><br>
+                        <div class="center">
+                            <div class="txtcenter">
+                                <p class="titulo2_ verde">Resultado:</p><br>
+                                <p class="input-oval">
+                                    {% if dose %}
+                                        {{dose[-1]}} MG
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner4"></div>
+            <div>
+                <div class="backverde margindown margintop center">
+                    <div class="quadrobranco2">
+                        <div class="txtcenter margindown margintop">
+                            <p class="titulo2_ margindown2 verde">Calcular a quantidade de soro</p>
+                            <p class="margindown subtitulo2">preencha as informações a seguir para calcular</p>
+                        </div>
+                        <div class="center">
+                            <form action="/calcular_soro" method="POST">
+                                <label for="nome">Nome do animal:</label><br>
+                                <input type="text" id="nome" name="nome" required class="input-oval"><br><br><br>
+                                <label for="grau">Grau de Desidratação:</label><br>
+                                <select name="grau" id="grau" class="input-oval" required>
+                                    <option value="Leve" >Leve</option>
+                                    <option value="Moderada">Moderada</option>
+                                    <option value="Grave">Grave</option>
+                                </select><br><br><br>
+                                <label for="peso">Peso:</label><br>
+                                <input type="number" id="peso" name="peso" required class="input-oval" step="0.01"><br><br><br>
+                                <input type="submit" value="Calcular" class="botaolegal">
+                            </form>
+                        </div><br><br><br>
+                        <div class="center">
+                            <div class="txtcenter">
+                                <p class="titulo2_ verde">Resultado:</p><br>
+                                <p class="input-oval">
+                                    {% if soro %}
+                                        {{soro[-1]}} ML
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="rosa">
+                    <h3 class="titulo4">Inscreva seu e-mail</h3>
+                    <p class="paragrafo1">Cadastre seu email e receba todas as nossas novidades.</p>
+                    <form action="">
+                        <ul>
+                            <input class="input" type="email" placeholder="Digite seu e-mail:">
+                            <button class="inscrever-se" type="submit">Inscrever-se</button>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <img class="logo1" src="../static/img/logo.png" alt="">
+            <p>©2024 Dog Dodoi</p>
+            <p class="cantinho">@dogdodoioficial</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,372 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+header.cabecalho{
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+img.logo{
+    width: 130px;
+    height: 100px;
+}
+
+div.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.botaolegal{
+    background-color: #2ab829;
+    color: rgb(255, 255, 255);
+    border-radius: 35px;
+    padding: 10px 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    justify-content: space-around;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botaolegal:hover {
+    background-color: #67d167;
+    transform: scale(1.1);
+}
+
+.botaolegal:active {
+    background-color: #83f883;
+    transform: scale(1.05);
+}
+
+
+div.barraverde{
+    background-color: #2ab829;
+    padding: 10px;
+}
+
+div.banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column ;
+    background-image: url(../img/dogbanner1.png);
+    height: 255px;
+}
+
+h2.titulo2{
+    text-align: center;
+    margin-top: 80px;
+    color: white;
+    font-size: 60px;
+    font-weight: lighter;
+}
+
+p.subtitulo{
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+}
+
+span.vermelho{
+    color: #ff9e9e;
+}
+
+span.verde{
+    color: #4eb848;
+}
+
+.saibamais{
+    margin-top: 20px;
+    margin-left: 500px ;
+    background-color: #2ab829;
+    color: rgb(255, 255, 255);
+    border-radius: 35px;
+    padding: 10px 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+.saibamais:hover {
+    background-color: #67d167;
+    transform: scale(1.1);
+}
+
+.saibamais:active {
+    background-color: #83f883;
+    transform: scale(1.05);
+}
+
+div.containerzao{
+    display: flex;
+    justify-content: space-around;
+}
+div.container2{
+    display: flex;
+    flex-direction: column;
+}
+h2.titulo3{
+    color: black;
+}
+
+p.paragrafo{
+    font-weight:lighter;
+}
+
+a button.botaocalculadora{
+    position: relative;
+    top: 65px;
+    right: 30px ;
+    background-color: #2ab829;
+    color: rgb(255, 255, 255);
+    border-radius: 35px;
+    padding: 10px 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botaocalculadora:hover {
+    background-color: #67d167;
+    transform: scale(1.1);
+}
+
+.botaocalculadora:active {
+    background-color: #83f883;
+    transform: scale(1.05);
+}
+
+
+.rosa{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/dogbanner2.png);
+    height: 220px
+}
+
+img.rodadepatas{
+    position: absolute ;
+    top: 390px;
+    right: 60px;
+    width: 270px;
+    height: 220px;
+}
+
+h3.titulo4{
+    padding-top: 30px;
+    color: white;
+    font-size: 32px;
+    margin-left: 100px;
+}
+
+p.paragrafo1{
+    font-size: 24px;
+    color: white;
+    margin-left: 5px;
+}
+
+.inscrever-se{
+    margin-bottom: 65px;
+    margin-right: 30px ;
+    background-color: #2ab829;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+
+}
+
+input.input{
+    padding: 10px 35px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+}
+
+footer{
+    text-align: center;
+}
+
+img.logo1{
+    width: 130px;
+    height: 100px;
+}
+
+footer p{
+    margin-top: 45px;
+}
+p.cantinho{
+    text-align: end;
+    margin-top: 0px;
+}
+
+@media (min-width: 1700px) and (max-width: 2560px) {
+    .banner {
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    .cabecalho {
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+    button.botaolegal {
+        font-size: 2em;
+        border-radius: 20px;
+    }
+    a button.saibamais {
+        font-size: 2em;
+        border-radius: 20px;
+        position: relative;
+        left: 20em;
+    }
+    img.rodadepatas {
+        top: 49.3em;
+        right: 12.5em;
+        width: 370px;
+        height: 320px;
+    }
+    a button.botaocalculadora {
+        font-size: 2em;
+        margin-top: 90px;
+    }
+    .titulo3 {
+        font-size: 50px;
+    }
+    .paragrafo {
+        font-size: 30px;
+    }
+    .rosa {
+        height: 440px; /* Correção: adicionada unidade de medida */
+    }
+    h3.titulo4 {
+        font-size: 50px;
+    }
+    p.paragrafo1 {
+        font-size: 40px; /* Correção: adicionada unidade de medida */
+    }
+    input.input {
+        margin-left: 20px;
+        margin-top: 1em;
+        font-size: 30px;
+    }
+    .inscrever-se {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 894px) and (max-width: 1440px) {
+    button.saibamais {
+        position: relative;
+        left: 150px;
+    }
+    img.rodadepatas {
+        top: 24.4em;
+        right: 7em;
+    }
+    input.input {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 1264px) {
+    .quadrobranco {
+        padding: 20px;
+    }
+    button.saibamais {
+        position: relative;
+        left: 50px;
+    }
+    a button.botaocalculadora {
+        position: relative;
+        left: -3.7em;
+    }
+}
+
+@media (min-width: 850px) and (max-width: 1024px) {
+    button.saibamais {
+        position: relative;
+        left: -70px;
+    }
+    img.rodadepatas {
+        top: 24.4em;
+        right: 0.5em;
+    }
+    input.input {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 850px) {
+    button.saibamais {
+        position: relative;
+    }
+    img.rodadepatas {
+        position: absolute;
+        top: 24.4em;
+        right: -1em;
+        width: auto; /* Adicionado para garantir que a largura seja ajustada automaticamente */
+        height: auto; /* Adicionado para garantir que a altura seja ajustada automaticamente */
+    }
+    input.input {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 425px) and (max-width: 850px) {
+    button.saibamais {
+        position: relative;
+        left: -70px;
+    }
+    img.rodadepatas {
+        position: absolute;
+        top: 24.4em;
+        right: 2em;
+        width: auto; /* Adicionado para garantir que a largura seja ajustada automaticamente */
+        height: auto; /* Adicionado para garantir que a altura seja ajustada automaticamente */
+    }
+    input.input {
+        font-size: 1.2em;
+    }
+    p.paragrafo {
+        font-size: 13px;
+    }
+    h2.titulo3 {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 1264px) {
+    .quadrobranco {
+        padding: 20px;
+    }
+    button.saibamais {
+        position: relative;
+        left: 50px;
+    }
+    a button.botaocalculadora {
+        position: relative;
+        left: -3.7em;
+    }
+}
+
+.rodadepatas {
+    animation: rotation 20s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

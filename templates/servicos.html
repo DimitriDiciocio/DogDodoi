@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Serviços</title>
+    <link rel="stylesheet" href="../static/css/servicos.css">
+</head>
+    <body>
+        <header class="cabecalho">
+            <div class="container">
+                <nav>
+                    <a href="/sobrenos"><button class="botaolegal">Sobre Nós</button></a>
+                </nav>
+                <nav>
+                    <a href="/servicos"><button class="botaolegal">Serviços</button></a>
+                </nav>
+                <a href="/"><img class="logo" src="../static/img/logo.png" alt=""></img></a>
+                <nav>
+                    <a href="/contato"><button class="botaolegal">Contato</button></a>
+                </nav>
+                <nav>
+                    <a href="{% if contatos %}{% for contato in contatos %}/editar_usuario/{{ loop.index0 }}{%endfor%}{% else %}/cadastro{% endif %}">
+                        <button class="botaolegal">
+                            {% if contatos %}
+                                {{ contatos[-1][1] }}
+                            {% else %}
+                                Cadastrar-se
+                            {% endif %}
+                        </button>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="barraverde"></div>
+        <main>
+            <div class="banner">
+                <div>
+                    <h2 class="titulo2">Quer <span class="vermelho">saber</span> quais são os <span class="verde">serviços</span></h2>
+                    <p class="subtitulo">Conheça os mais diversos tipos de serviços disponibilizados na clinica veterinária Dog Dodói</p>
+                    <a href="/sobrenos"><button class="saibamais">SAIBA MAIS</button></a>
+                </div>
+            </div>
+            <div class="backverde">
+                <div class="margintop margindown"><h2 class="subtitulo2 txtcenter letramtgrande">Nossos recursos e serviços</h2></div>
+                <div class="wrap_flex around">
+                    <div class="quadrobranco">
+                        <img src="../static/img/kit-de-primeiros-socorros 1.png" alt="" class="centralimg">
+                        <p class="margindown verde letragrande margintop">Agendamento de Consultas</p>
+                        <a href="/adicionar_agendamento"><button class="botaolegal">Mais</button></a>
+                    </div>
+                    <div class="quadrobranco">
+                        <div class="center"><img src="../static/img/cachorro 1.png" alt="" class="centralimg"></div>
+                        <p class="margindown verde letragrande margintop">Calculadora de idade animal</p>
+                        <a href="/calcular_idade"><button class="botaolegal">Mais</button></a>
+                    </div>
+                    <div class="quadrobranco">
+                        <img src="../static/img/casa-de-estimacao 1.png" alt="" class="centralimg">
+                        <p class="margindown verde letragrande margintop">Calculadora de soro e dose</p>
+                        <a href="/soro_e_dose"><button class="botaolegal">Mais</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="rosa">
+                    <h3 class="titulo4">Inscreva seu e-mail</h3>
+                    <p class="paragrafo1">Cadastre seu email e receba todas as nossas novidades.</p>
+                    <form action="">
+                        <ul>
+                            <input class="input" type="email" placeholder="Digite seu e-mail:">
+                            <button class="inscrever-se" type="submit">Inscrever-se</button>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <img class="logo1" src="../static/img/logo.png" alt="">
+            <p>©2024 Dog Dodoi</p>
+            <p class="cantinho">@dogdodoioficial</p>
+        </footer>
+        
+    </body>
+</html>

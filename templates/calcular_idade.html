@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular Idade</title>
+    <link rel="stylesheet" href="../static/css/agendar.css">
+</head>
+    <body>
+        <header class="cabecalho">
+            <div class="container">
+                <nav>
+                    <a href="/sobrenos"><button class="botaolegal">Sobre Nós</button></a>
+                </nav>
+                <nav>
+                    <a href="/servicos"><button class="botaolegal">Serviços</button></a>
+                </nav>
+                <a href="/"><img class="logo" src="../static/img/logo.png" alt=""></img></a>
+                <nav>
+                    <a href="/contato"><button class="botaolegal">Contato</button></a>
+                </nav>
+                <nav>
+                    <a href="{% if contatos %}{% for contato in contatos %}/editar_usuario/{{ loop.index0 }}{%endfor%}{% else %}/cadastro{% endif %}">
+                        <button class="botaolegal">
+                            {% if contatos %}
+                                {{ contatos[-1][1] }}
+                            {% else %}
+                                Cadastrar-se
+                            {% endif %}
+                        </button>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="barraverde"></div>
+        <main>
+            <div class="banner">
+                <div>
+                <h2 class="titulo2"><span class="verde">Calculadora</span> de <span class="vermelho">idade </span>animal</h2>
+                <p class="subtitulo">Quantos anos o seu pet tem em idade humana? Curioso? Faça o teste abaixo!</p>
+                <a href="/sobrenos"><button class="saibamais">SAIBA MAIS</button></a>
+                </div>
+            </div>
+            <div>
+                <div class="backverde margindown margintop center">
+                    <div class="quadrobranco2">
+                        <div class="txtcenter margindown margintop">
+                            <p class="titulo2_ margindown2 verde">Calcular idade do animal</p>
+                            <p class="margindown subtitulo2">Preencha os campos a seguir para calcular</p>
+                        </div>
+                        <div class="center">
+                            <form action="/calcular_idade" method="POST">
+                                <label for="nome">Nome do animal:</label><br>
+                                <input type="text" id="nome" name="nome" required class="input-oval"><br><br><br>
+                                <label for="especie_animal">Espécie:</label><br>
+                                <select name="especie_animal" id="especie_animal" class="input-oval" required>
+                                    <option value="Cachorro" >Cachorro</option>
+                                    <option value="Gato">Gato</option>
+                                </select><br><br><br>
+                                <label for="idade">Idade:</label><br>
+                                <input type="number" id="idade" name="idade" required class="input-oval"><br><br><br>
+                                <input type="submit" value="Calcular" class="botaolegal">
+                            </form>
+                        </div> <br><br><br>
+                        <div class="center">
+                            <div class="txtcenter">
+                                <p class="titulo2_ verde">Resultado:</p><br>
+                                <p class="input-oval">
+                                    {% if idade_humana %}
+                                        {{idade_humana[-1]}} Anos Humanos
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="rosa">
+                    <h3 class="titulo4">Inscreva seu e-mail</h3>
+                    <p class="paragrafo1">Cadastre seu email e receba todas as nossas novidades.</p>
+                    <form action="">
+                        <ul>
+                            <input class="input" type="email" placeholder="Digite seu e-mail:">
+                            <button class="inscrever-se" type="submit">Inscrever-se</button>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <img class="logo1" src="../static/img/logo.png" alt="">
+            <p>©2024 Dog Dodoi</p>
+            <p class="cantinho">@dogdodoioficial</p>
+        </footer>
+    </body>
+</html>

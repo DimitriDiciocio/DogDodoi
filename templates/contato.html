@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    <link rel="stylesheet" href="../static/css/contato.css">
+</head>
+    <body>
+        <header class="cabecalho">
+            <div class="container">
+                <nav>
+                    <a href="/sobrenos"><button class="botaolegal">Sobre Nós</button></a>
+                </nav>
+                <nav>
+                    <a href="/servicos"><button class="botaolegal">Serviços</button></a>
+                </nav>
+                <a href="/"><img class="logo" src="../static/img/logo.png" alt=""></img></a>
+                <nav>
+                    <a href="/contato"><button class="botaolegal">Contato</button></a>
+                </nav>
+                <nav>
+                    <a href="{% if contatos %}{% for contato in contatos %}/editar_usuario/{{ loop.index0 }}{%endfor%}{% else %}/cadastro{% endif %}">
+                        <button class="botaolegal">
+                            {% if contatos %}
+                                {{ contatos[-1][1] }}
+                            {% else %}
+                                Cadastrar-se
+                            {% endif %}
+                        </button>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="barraverde"></div>
+        <main>
+            <div class="banner3">
+                <div>
+                <h2 class="titulo2"> <span class="vermelho">Quer</span> entrar em <span class="verde">contato </span>conosco</h2>
+                <p class="subtitulo">Aqui na clinica veterinária Dog Dodói você quem manda! De qual maneira você prefere nos contatar?</p>
+                <a href="/sobrenos"><button class="saibamais">SAIBA MAIS</button></a>
+                </div>
+            </div>
+            <div>
+                <br><br>
+                <div class="wrap_flex around margindown margintop">
+                    <div class="margindown">
+                        <img src="../static/img/image 6.png" alt="">
+                        <p class="verde margindown letragrande">E-mail</p>
+                        <p class="margindown">Tem alguma duvida? <br>
+                            Nos pergunte no e-mail:</p>
+                        <p>@dogdodoi.oficial@gmail.com</p>
+                    </div>
+                    <div class="margindown">
+                        <img src="../static/img/image 6 (1).png" alt="">
+                        <p class="verde margindown letragrande">Telefone</p>
+                        <p class="margindown">Tem alguma duvida? <br>
+                            Nos telefone no número:</p>
+                        <p>(018) 3655-2352</p>
+                    </div>
+                    <div class="margindown">
+                        <img src="../static/img/image 7.png" alt="">
+                        <p class="verde margindown letragrande">Instagram</p>
+                        <p class="margindown">Tem alguma duvida? <br>
+                            Nos mande uma mensagem:</p>
+                        <p>@dogdodoioficial</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="rosa">
+                    <h3 class="titulo4">Inscreva seu e-mail</h3>
+                    <p class="paragrafo1">Cadastre seu email e receba todas as nossas novidades.</p>
+                    <form action="">
+                        <ul>
+                            <input class="input" type="email" placeholder="Digite seu e-mail:">
+                            <button class="inscrever-se" type="submit">Inscrever-se</button>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <img class="logo1" src="../static/img/logo.png" alt="">
+            <p>©2024 Dog Dodoi</p>
+            <p class="cantinho">@dogdodoioficial</p>
+        </footer>
+    </body>
+</html>

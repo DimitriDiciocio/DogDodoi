@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina Inicial</title>
+    <link rel="stylesheet" href="../static/css/estilo.css">
+</head>
+    <body>
+        <header class="cabecalho">
+            <div class="container">
+                <nav>
+                    <a href="/sobrenos"><button class="botaolegal">Sobre Nós</button></a>
+                </nav>
+                <nav>
+                    <a href="/servicos"><button class="botaolegal">Serviços</button></a>
+                </nav>
+                <a href="/"><img class="logo" src="../static/img/logo.png" alt=""></img></a>
+                <nav>
+                    <a href="/contato"><button class="botaolegal">Contato</button></a>
+                </nav>
+                <nav>
+                    <a href="{% if contatos %}{% for contato in contatos %}/editar_usuario/{{ loop.index0 }}{%endfor%}{% else %}/cadastro{% endif %}">
+                        <button class="botaolegal">
+                            {% if contatos %}
+                                {{ contatos[-1][1] }}
+                            {% else %}
+                                Cadastrar-se
+                            {% endif %}
+                        </button>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="barraverde"></div>
+        <main>
+            <div class="banner">
+                <div>
+                <h2 class="titulo2">Seu pet com <span class="vermelho">amor</span> e <span class="verde">cuidado</span></h2>
+                <p class="subtitulo">A Clínica Veterinária Dog Dodói é referência no atendimento a cães e gatos no Brasil</p>
+                <a href="/sobrenos"><button class="saibamais">SAIBA MAIS</button></a>
+                </div>
+            </div>
+            <div>
+                <br><br>
+                <div class="containerzao">
+                    <div class="container2">
+                    <br><br>
+                    <h2 class="titulo3">Bem-vindo(a) à Clínica Dog Dodói</h2>
+                    <br><br>
+                    <p class="paragrafo">Estamos prontos para atender o seu pet naquilo que for de nosso alcance.
+                        Somos apaixonados pelos bichinhos <br> e aqui serão tratados principalmente com amor.
+                        Teste a calculadora de idade animal para idade humana:</p>
+                    </div>
+                    <img class="rodadepatas" src="../static/img/rodadepatas.png" alt="">
+                    <a href="/calcular_idade"><button class="botaocalculadora">Calculadora</button></a>
+                </div>
+            </div>
+            <br><br><br><br>
+            <div class="container3">
+                <div class="rosa">
+                    <h3 class="titulo4">Inscreva seu e-mail</h3>
+                    <p class="paragrafo1">Cadastre seu email e receba todas as nossas novidades.</p>
+                    <form action="">
+                        <ul>
+                            <input class="input" type="email" placeholder="Digite seu e-mail:">
+                            <button class="inscrever-se" type="submit">Inscrever-se</button>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <img class="logo1" src="../static/img/logo.png" alt="">
+            <p>©2024 Dog Dodoi</p>
+            <p class="cantinho">@dogdodoioficial</p>
+        </footer>
+
+    </body>
+</html>
